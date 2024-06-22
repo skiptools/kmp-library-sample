@@ -1,11 +1,13 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
-    id("org.jetbrains.kotlin.multiplatform")
-    id("maven-publish")
+    kotlin("multiplatform")
+    alias(libs.plugins.androidLibrary)
 }
 
 kotlin {
+    //android()
+
     val iosArm64 = iosArm64()
     val iosX64 = iosX64()
     val iosSimulatorArm64 = iosSimulatorArm64()
@@ -19,16 +21,12 @@ kotlin {
                 isStatic = true
                 baseName = "MultiPlatformLibrary"
                 xcFramework.add(this)
-                //export(moko.resources)
             }
         }
     }
 
     sourceSets {
         val commonMain by getting {
-            dependencies {
-                //api(moko.resources)
-            }
         }
         val iosMain by creating {
             dependsOn(commonMain)
@@ -51,24 +49,12 @@ kotlin {
     }
 }
 
-dependencies {
-    //commonMainApi(moko.resources)
+android {
+    namespace = "com.example.library"
+    compileSdk = libs.versions.compileSdk.get().toInt()
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xmlX")
+    defaultConfig {
+        minSdk = libs.versions.minSdk.get().toInt()
+    }
 }
 
-//multiplatformResources {
-//    resourcesPackage.set("com.icerockdev.library")
-//    configureCopyXCFrameworkResources("MultiPlatformLibrary")
-//}
-
-//publishing {
-//    repositories {
-//        maven {
-//
-//        }
-//    }
-//    publications {
-//        gpr(MavenPublication) {
-//            from(components.java)
-//        }
-//    }
-//}

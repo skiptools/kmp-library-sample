@@ -1,6 +1,12 @@
 [versions]
+
+## SDK Versions
+minSdk = "21"
+targetSdk = "34"
+compileSdk = "34"
+
 kotlinVersion = "1.9.20"
-androidGradleVersion = "8.1.4"
+androidGradleVersion = "8.2.2"
 androidSdkCommonVersion = "31.1.2"
 
 # kotlinx
@@ -24,19 +30,11 @@ icu4jVersion = "73.1"
 commonsCodecVersion = "1.15"
 batikVersion = "1.17"
 
-# moko
-mokoGraphicsVersion = "0.9.0"
-mokoTestVersion = "0.6.1"
-mokoMultiplatformPluginVersion = "0.14.2"
 
 [libraries]
 # kotlinx
 kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion" }
 kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesVersion" }
-
-# moko
-mokoGraphics = { module = "dev.icerock.moko:graphics", version.ref = "mokoGraphicsVersion" }
-mokoTestCore = { module = "dev.icerock.moko:test-core", version.ref = "mokoTestVersion" }
 
 # android
 appCompatResources = { module = "androidx.appcompat:appcompat-resources", version.ref = "androidAppCompatVersion" }
@@ -58,5 +56,11 @@ androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref =
 androidSdkCommon = { module = "com.android.tools:sdk-common", version.ref = "androidSdkCommonVersion" }
 kotlinCompilerEmbeddable = { module = "org.jetbrains.kotlin:kotlin-compiler-embeddable", version.ref = "kotlinVersion" }
 detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detektVersion" }
-mokoMultiplatformPlugin = { module = "dev.icerock:mobile-multiplatform", version.ref = "mokoMultiplatformPluginVersion" }
 composeJetBrainsPlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "composeJetbrainsVersion" }
+
+
+[plugins]
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlinVersion" }
+androidLibrary = { id = "com.android.library", version.ref = "androidGradleVersion" }
+
+
