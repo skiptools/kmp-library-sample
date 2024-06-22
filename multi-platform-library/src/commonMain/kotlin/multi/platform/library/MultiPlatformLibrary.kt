@@ -12,6 +12,8 @@ class SampleClass(var stringField: String, var intField: Int, val doubleField: D
     }
 }
 
-enum class SampleEnum {
-
+enum class SampleEnum(val rawValue: Int) {
+    a(1),
+    b(2),
+    c(3)
 }

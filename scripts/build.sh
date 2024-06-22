@@ -6,7 +6,7 @@ gradle assembleMultiPlatformLibraryXCFramework
 cd multi-platform-library/build/XCFrameworks/release/
 
 rm -f MultiPlatformLibrary.xcframework.zip
-zip -r MultiPlatformLibrary.xcframework.zip MultiPlatformLibrary.xcframework
+zip -qr MultiPlatformLibrary.xcframework.zip MultiPlatformLibrary.xcframework
 ls -lah MultiPlatformLibrary.xcframework.zip
 shasum -a 256 MultiPlatformLibrary.xcframework.zip
 
