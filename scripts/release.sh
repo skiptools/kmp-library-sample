@@ -1,6 +1,8 @@
 #!/bin/bash
 set -ex
 
+git pull
+
 ./scripts/build.sh
 
 LATEST_VERSION=$(git tag -l --sort=-version:refname | grep '[0-9]*\.[0-9]*\.[0-9]*' | head -n 1)
