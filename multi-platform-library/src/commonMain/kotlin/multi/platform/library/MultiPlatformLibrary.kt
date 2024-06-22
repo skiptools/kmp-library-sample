@@ -1,4 +1,4 @@
-package com.example.library
+package multi.platform.library
 
 object Singleton {
     fun stringFunction(): String {
@@ -7,8 +7,11 @@ object Singleton {
 }
 
 class SampleClass(var stringField: String, var intField: Int, val doubleField: Double) {
-    fun addFields() : Double {
+    fun addNumbers() : Double {
         return intField + doubleField
     }
 }
 
+enum class SampleEnum {
+
+}

@@ -14,4 +14,4 @@ pluginManagement {
     }
 }
 
-include(":mpp-library")
+include(":multi-platform-library")
