@@ -1,0 +1,6 @@
+.*.swp
+.build/
+.gradle/
+build/
+*/build/
+.DS_Store
