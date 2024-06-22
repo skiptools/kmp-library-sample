@@ -1,5 +1,7 @@
 [versions]
 
+jvm = "17"
+
 ## SDK Versions
 minSdk = "21"
 targetSdk = "34"

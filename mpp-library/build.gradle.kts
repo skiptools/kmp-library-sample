@@ -6,7 +6,7 @@ plugins {
 }
 
 kotlin {
-    //android()
+    androidTarget()
 
     val iosArm64 = iosArm64()
     val iosX64 = iosX64()
@@ -55,6 +55,16 @@ android {
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xmlX")
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.jvm.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.jvm.get())
+    }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>() {
+    kotlinOptions {
+        jvmTarget = libs.versions.jvm.get().toString()
     }
 }
 
