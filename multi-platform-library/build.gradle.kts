@@ -27,6 +27,12 @@ kotlin {
 
     sourceSets {
         val commonMain by getting {
+            dependencies {
+                implementation(libs.kotlinxCoroutines)
+                //implementation(libs.ktor.client.core)
+                //implementation(libs.ktor.client.cio)
+                //implementation(libs.ktor.client.content.negotiation)
+            }
         }
         val iosMain by creating {
             dependsOn(commonMain)
