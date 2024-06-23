@@ -24,9 +24,9 @@ class SampleClass(var stringField: String, var intField: Int, val doubleField: D
 }
 
 class SampleAsync {
-    suspend fun performSuspend(): String {
-        delay(1L)  // Suspends the coroutine for 1 second (1000 milliseconds)
-        return "suspended"
+    suspend fun performSuspend(duration: Long, value: String): String {
+        delay(duration)  // Suspends the coroutine
+        return value
     }
 }
 
