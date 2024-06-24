@@ -58,7 +58,7 @@ kotlin {
 android {
     namespace = "com.example.library"
     compileSdk = libs.versions.compileSdk.get().toInt()
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xmlX")
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
     }
