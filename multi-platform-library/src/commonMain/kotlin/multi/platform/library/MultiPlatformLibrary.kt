@@ -17,15 +17,27 @@ object Singleton {
     }
 }
 
+/**
+ * A basic Kotlin class that will be exposed to Objective-C via KMP.
+ */
 class SampleClass(var stringField: String, var intField: Int, val doubleField: Double) {
+    /**
+     * Adds the intField and doubleField together.
+     */
     fun addNumbers() : Double {
         return intField + doubleField
     }
 
+    /**
+     * Delays by a certain amount.
+     */
     suspend fun asyncFunction(duration: Long) {
         delay(duration)
     }
 
+    /**
+     * Throws an Exception, always.
+     */
     @Throws(Exception::class)
     fun throwingFunction() {
         throw Exception("This function always throws")
