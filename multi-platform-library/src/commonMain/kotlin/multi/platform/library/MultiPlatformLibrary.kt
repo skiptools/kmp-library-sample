@@ -21,6 +21,15 @@ class SampleClass(var stringField: String, var intField: Int, val doubleField: D
     fun addNumbers() : Double {
         return intField + doubleField
     }
+
+    suspend fun asyncFunction(duration: Long) {
+        delay(duration)
+    }
+
+    @Throws(Exception::class)
+    fun throwingFunction() {
+        throw Exception("This function always throws")
+    }
 }
 
 class SampleAsync {
