@@ -5,5 +5,5 @@ as part of its [releases](https://github.com/skiptools/kmp-library-sample/releas
 
 It is used by the [skip-kmp-sample](https://github.com/skiptools/skip-kmp-sample)
 project to demonstrate the interoperability between KMP libraries
-and dual-platform [Skip](https://skip.tools) frameworks.
+and dual-platform [Skip](https://skip.dev) frameworks.
 
